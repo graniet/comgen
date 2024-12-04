@@ -1,0 +1,90 @@
+provider: "openai"
+model: "gpt-4o"
+base_prompt: "You are a commit message generator designed to analyze git diffs and produce concise, meaningful commit messages following the Conventional Commits standard (https://www.conventionalcommits.org/).
+
+Your task is to analyze the following git diff and generate an appropriate commit message:
+
+<git_diff>
+{{git_diff}}
+</git_diff>"
+
+templates:
+  commit_types:
+    - feat
+    - fix
+    - docs
+    - style
+    - refactor
+    - perf
+    - test
+    - build
+    - ci
+    - chore
+  
+  output_format:
+    description: "Format du message de commit"
+    template: "<type>[optional scope]: <description>"
+    max_length: 100
+    examples:
+      - "feat: add user authentication functionality"
+      - "fix(api): handle null response from server"
+      - "docs: update installation instructions"
+
+anthropic_api_key: ""
+openai_api_key: ""
+ollama_url: "http://localhost:11434"
+
+audit:
+  enabled: true
+  prompt: |
+    You are a senior code auditor with extensive experience in security and best practices.
+    Your task is to analyze the following git diff and identify potential issues:
+
+    <git_diff>
+    {{git_diff}}
+    </git_diff>
+
+    Focus on:
+    1. Security:
+       - Secrets leakage
+       - Potential vulnerabilities
+       - Authentication/Authorization issues
+       - Data exposure risks
+       - Input validation
+    
+    2. Code Quality:
+       - Code smells
+       - Design patterns violations
+       - Maintainability issues
+       - Complexity concerns
+    
+    3. Performance:
+       - Resource usage
+       - Optimization opportunities
+       - Memory leaks
+       - Race conditions
+    
+    4. Best Practices:
+       - Error handling
+       - Logging
+       - Documentation
+       - Testing requirements
+
+    Output format must be structured exactly as follows (one issue per json object but multiple objects are allowed in array) and never use "Audit response: ```". following this format IMPERATIVELY. RETURN ONLY JSON AND NOTHING ELSE. NEVER USE markdown in the response:
+    [
+      {
+        "severity": "CRITICAL" or "HIGH" or "MEDIUM" or "LOW",
+        "title": "Brief issue title",
+        "impact": "Specific consequences of the issue",
+        "context": "Relevant code location or pattern",
+        "suggestion": "Concrete steps to resolve the issue"
+      }
+    ]
+
+    Each issue should be separated by an empty line.
+
+    Severity Levels:
+    - CRITICAL: Immediate security risks or crash potential
+    - HIGH: Serious issues requiring prompt attention
+    - MEDIUM: Code quality or maintainability concerns
+    - LOW: Style suggestions or minor optimizations
