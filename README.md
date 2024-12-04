@@ -17,7 +17,6 @@ ComGen is a command-line tool that automatically generates Git commit messages u
 - 📝 Allows customization of commit message templates
 - 🌐 Works on Windows, macOS and Linux
 
-w
 ## Configuration 🛠️
 
 ComGen uses two main configuration files:
