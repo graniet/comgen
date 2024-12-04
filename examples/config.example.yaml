@@ -22,7 +22,6 @@ templates:
     - chore
   
   output_format:
-    description: "Format du message de commit"
     template: "<type>[optional scope]: <description>"
     max_length: 100
     examples:
