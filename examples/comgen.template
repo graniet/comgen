@@ -1,0 +1,19 @@
+commit_types:
+  - feat
+  - fix
+  - docs
+  - style
+  - refactor
+  - perf
+  - test
+  - build
+  - ci
+  - chore
+
+output_format:
+  template: "<type>[optional scope]: <description>"
+  max_length: 100
+  examples:
+    - "feat: add user authentication functionality"
+    - "fix(api): handle null response from server"
+    - "docs: update installation instructions"

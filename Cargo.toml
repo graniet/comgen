@@ -1,0 +1,20 @@
+[package]
+name = "comgen"
+description = "Generate commit messages from git diff on working directory using LLMs."
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+thiserror = "2.0.4"
+clap = { version = "4", features = ["derive"] }
+openai-rs = "0.1.1"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1.39"
+tracing-subscriber = "0.3.19"
+tracing-appender = "0.2.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9.20"
+reqwest = { version = "0.12.9", features = ["json", "blocking"] }
+async-trait = "0.1"
+serde_json = "1.0"
+indicatif = "0.17.0"
