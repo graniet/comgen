@@ -1,9 +1,10 @@
-# ComGen 🚀
+<img src="https://i.postimg.cc/SKST2N1J/image-99.jpg" width="300" alt="logo">
+
+
+ComGen is a command-line tool that automatically generates Git commit messages using Large Language Models (LLMs). It analyzes modified files in your Git repository and creates relevant commit messages based on code differences.
 
 [![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
-ComGen is a command-line tool that automatically generates Git commit messages using Large Language Models (LLMs). It analyzes modified files in your Git repository and creates relevant commit messages based on code differences.
 
 [![asciicast](https://asciinema.org/a/jx1V2DqcGIhgXATjQzGVUFANy.svg)](https://asciinema.org/a/jx1V2DqcGIhgXATjQzGVUFANy)
 
