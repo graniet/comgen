@@ -13,3 +13,28 @@ ComGen is a command-line tool that automatically generates Git commit messages u
 - 🛡️ Performs security audits on code changes
 - 📝 Allows customization of commit message templates
 - 🌐 Works on Windows, macOS and Linux
+
+w
+## Configuration 🛠️
+
+ComGen uses two main configuration files:
+
+### Main Configuration (`config.yaml`)
+
+The main configuration allows you to define:
+
+- `provider`: The LLM provider ("openai", "anthropic", "ollama")
+- `model`: The model to use (e.g., "gpt-4")
+- `base_prompt`: The base prompt for generation
+- `templates`: Commit template configuration
+- API keys for different providers
+
+### Commit Template (`comgen.template`)
+
+The `comgen.template` file defines the structure of commit messages, it can be used at the root of a project to define a particular standard.
+
+- `commit_types`: List of allowed commit types (feat, fix, docs, etc.)
+- `output_format`: Output format configuration
+  - `template`: Message structure "<type>[optional scope]: <description>"
+  - `max_length`: Maximum message length (100 characters)
+  - `examples`: Examples of valid commit messages
